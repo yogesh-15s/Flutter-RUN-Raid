@@ -37,5 +37,6 @@ This file tracks all updates and modifications made to the project.
 ### Change-4: Created API Requirements Log
 - Date: 2026-07-08
 - Description: Created [API_REQUIREMENTS.md](file:///C:/NEW%20RUN%20RAID/API_REQUIREMENTS.md) mapping all future authentication, synchronization, anti-cheat, territory claim, and leaderboard REST API specifications.
-
-
+### Change-5: Created Root Gitignore
+- Date: 2026-07-08
+- Description: Created root [.gitignore](file:///C:/NEW%20RUN%20RAID/.gitignore) to protect local environment configurations, secrets, and IDE settings.

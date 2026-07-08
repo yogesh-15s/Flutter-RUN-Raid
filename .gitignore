@@ -1,0 +1,16 @@
+# Local environment variables (API Keys, private configs)
+.env
+*.env
+.env.*
+secrets/
+
+# Scratch & temporary workspace files
+scratch/
+tmp/
+*.log
+
+# IDE & OS-specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

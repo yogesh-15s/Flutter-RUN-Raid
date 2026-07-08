@@ -41,6 +41,7 @@ my_flutter_app/                      <-- Root Project Folder
   - **[PROMPTS.md](file:///C:/NEW%20RUN%20RAID/PROMPTS.md)**: Next prompt task queues.
   - **[PROJECT_IDEA.md](file:///C:/NEW%20RUN%20RAID/PROJECT_IDEA.md)**: Project scope, goals, and dual design themes.
   - **[API_REQUIREMENTS.md](file:///C:/NEW%20RUN%20RAID/API_REQUIREMENTS.md)**: Backend REST endpoint request/response payloads specifications.
+  - **[.gitignore](file:///C:/NEW%20RUN%20RAID/.gitignore)**: Root git configuration to ignore API keys, secrets, and IDE configs.
 - **[lib/](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib)**: All Dart code.
   - **[lib/main.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/main.dart)**: Boots the app, sets up providers, and initializes services.
   - **[lib/core/theme/app_theme.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/core/theme/app_theme.dart)**: Contains color variables and design metrics for normal (emerald green) and raid (crimson/black) themes.
