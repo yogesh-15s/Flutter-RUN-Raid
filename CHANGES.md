@@ -40,3 +40,8 @@ This file tracks all updates and modifications made to the project.
 ### Change-5: Created Root Gitignore
 - Date: 2026-07-08
 - Description: Created root [.gitignore](file:///C:/NEW%20RUN%20RAID/.gitignore) to protect local environment configurations, secrets, and IDE settings.
+
+### Change-6: Resolved Deprecated Color APIs
+- Date: 2026-07-08
+- Description: Replaced all deprecated `withOpacity(...)` calls with `withValues(alpha: ...)` across [app_theme.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/core/theme/app_theme.dart), [map_widget.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/map_widget.dart), and [run_screen.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/run_screen.dart).
+

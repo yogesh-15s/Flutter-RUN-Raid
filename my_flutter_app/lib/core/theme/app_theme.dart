@@ -30,12 +30,12 @@ class AppTheme {
   static BoxDecoration getCardDecoration(String mode) {
     if (mode == 'RAID') {
       return BoxDecoration(
-        color: AppColors.raidCard.withOpacity(0.85),
+        color: AppColors.raidCard.withValues(alpha: 0.85),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.raidGlassBorder, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.raidAccent.withOpacity(0.15),
+            color: AppColors.raidAccent.withValues(alpha: 0.15),
             blurRadius: 10,
             spreadRadius: 2,
           )
@@ -43,12 +43,12 @@ class AppTheme {
       );
     } else {
       return BoxDecoration(
-        color: AppColors.normalCard.withOpacity(0.9),
+        color: AppColors.normalCard.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.6), width: 1.5),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.6), width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             spreadRadius: 2,
           )
@@ -63,11 +63,11 @@ class AppTheme {
       return BoxDecoration(
         color: const Color(0xFF080808),
         border: Border(
-          top: BorderSide(color: AppColors.raidAccent.withOpacity(0.3), width: 1),
+          top: BorderSide(color: AppColors.raidAccent.withValues(alpha: 0.3), width: 1),
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.raidAccent.withOpacity(0.08),
+            color: AppColors.raidAccent.withValues(alpha: 0.08),
             blurRadius: 15,
             spreadRadius: 2,
             offset: const Offset(0, -3),
@@ -78,7 +78,7 @@ class AppTheme {
       return BoxDecoration(
         color: const Color(0xFFF1F3F5),
         border: Border(
-          top: BorderSide(color: Colors.grey.withOpacity(0.2), width: 1),
+          top: BorderSide(color: Colors.grey.withValues(alpha: 0.2), width: 1),
         ),
       );
     }

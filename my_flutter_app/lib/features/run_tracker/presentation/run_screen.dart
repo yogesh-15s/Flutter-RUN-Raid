@@ -30,10 +30,10 @@ class RunScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      isRaid ? Colors.black.withOpacity(0.8) : Colors.black.withOpacity(0.2),
+                      isRaid ? Colors.black.withValues(alpha: 0.8) : Colors.black.withValues(alpha: 0.2),
                       Colors.transparent,
                       Colors.transparent,
-                      isRaid ? Colors.black.withOpacity(0.9) : Colors.black.withOpacity(0.25),
+                      isRaid ? Colors.black.withValues(alpha: 0.9) : Colors.black.withValues(alpha: 0.25),
                     ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -102,12 +102,12 @@ class RunScreen extends StatelessWidget {
                   color: isRaid ? AppColors.raidBg : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: accentColor.withOpacity(0.5),
+                    color: accentColor.withValues(alpha: 0.5),
                     width: 1.5,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: accentColor.withOpacity(0.2),
+                      color: accentColor.withValues(alpha: 0.2),
                       blurRadius: 8,
                       spreadRadius: 1,
                     )
@@ -173,7 +173,7 @@ class RunScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: isSelected
                                   ? accentColor
-                                  : (isRaid ? const Color(0xFF1E1E1E) : Colors.white.withOpacity(0.8)),
+                                  : (isRaid ? const Color(0xFF1E1E1E) : Colors.white.withValues(alpha: 0.8)),
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
                                 color: isSelected
@@ -306,12 +306,12 @@ class RunScreen extends StatelessWidget {
         color: isRaid ? const Color(0xFF121212) : Colors.white,
         shape: BoxShape.circle,
         border: Border.all(
-          color: isRaid ? AppColors.raidAccent.withOpacity(0.3) : Colors.grey.shade300,
+          color: isRaid ? AppColors.raidAccent.withValues(alpha: 0.3) : Colors.grey.shade300,
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 5,
           )
         ],
@@ -346,7 +346,7 @@ class RunScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
             elevation: 8,
-            shadowColor: accentColor.withOpacity(0.4),
+            shadowColor: accentColor.withValues(alpha: 0.4),
           ),
           onPressed: () => controller.startRun(),
           child: Column(

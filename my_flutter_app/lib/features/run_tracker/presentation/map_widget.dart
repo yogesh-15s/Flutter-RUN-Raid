@@ -67,7 +67,7 @@ class _MapWidgetState extends State<MapWidget> {
                 points: routeCoordinates,
                 strokeWidth: 5.0,
                 color: AppTheme.getAccentColor(mode),
-                borderColor: Colors.black.withOpacity(0.4),
+                borderColor: Colors.black.withValues(alpha: 0.4),
                 borderStrokeWidth: 1.0,
               ),
             ],
@@ -86,7 +86,7 @@ class _MapWidgetState extends State<MapWidget> {
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: AppTheme.getAccentColor(mode).withOpacity(0.5),
+                        color: AppTheme.getAccentColor(mode).withValues(alpha: 0.5),
                         blurRadius: 10,
                         spreadRadius: 3,
                       )
