@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import 'run_state_controller.dart';
 import 'package:my_flutter_app/core/theme/app_theme.dart';
+import 'package:my_flutter_app/features/run_tracker/data/location_service.dart';
 
 class MapWidget extends StatefulWidget {
   const MapWidget({super.key});
@@ -15,12 +16,32 @@ class MapWidget extends StatefulWidget {
 class _MapWidgetState extends State<MapWidget> {
   final MapController _mapController = MapController();
   bool _hasCentredInitial = false;
+  int _lastProcessedRecenterTrigger = 0;
+
+  Future<void> _recenterToCurrentLocation(RunStateController controller) async {
+    try {
+      final position = await LocationService().getCurrentPosition();
+      final target = LatLng(position.latitude, position.longitude);
+      _mapController.move(target, 17.0);
+    } catch (e) {
+      if (controller.runPoints.isNotEmpty) {
+        final lastPoint = controller.runPoints.last;
+        _mapController.move(LatLng(lastPoint.latitude, lastPoint.longitude), 17.0);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<RunStateController>();
     final mode = controller.activeMode;
     final points = controller.runPoints;
+
+    // Check if map recentering was triggered
+    if (controller.recenterTrigger > _lastProcessedRecenterTrigger) {
+      _lastProcessedRecenterTrigger = controller.recenterTrigger;
+      _recenterToCurrentLocation(controller);
+    }
 
     // Convert RunPoint model coordinates to LatLng coordinates for flutter_map
     final routeCoordinates = points

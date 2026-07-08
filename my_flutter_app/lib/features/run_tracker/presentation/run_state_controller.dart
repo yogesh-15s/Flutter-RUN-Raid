@@ -19,8 +19,10 @@ class RunStateController extends ChangeNotifier {
   int _durationSeconds = 0;
   double _currentSpeed = 0.0;
   Timer? _runTimer;
+  int _recenterTrigger = 0;
 
   // Getters
+  int get recenterTrigger => _recenterTrigger;
   bool get isTracking => _isTracking;
   String get activeMode => _activeMode;
   String get selectedCategory => _selectedCategory;
@@ -46,6 +48,12 @@ class RunStateController extends ChangeNotifier {
         _addPoint(point);
       }
     });
+  }
+
+  // Trigger map recentering
+  void triggerRecenter() {
+    _recenterTrigger++;
+    notifyListeners();
   }
 
   // Set active sport category

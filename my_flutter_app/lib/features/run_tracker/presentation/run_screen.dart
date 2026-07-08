@@ -147,6 +147,23 @@ class RunScreen extends StatelessWidget {
             ),
           ),
 
+          // Location Refresh Button (glowing mini button)
+          Positioned(
+            bottom: controller.isTracking ? 100 : 158,
+            right: 16,
+            child: FloatingActionButton(
+              mini: true,
+              backgroundColor: isRaid ? const Color(0xFF1E1E1E) : Colors.white,
+              foregroundColor: accentColor,
+              shape: const CircleBorder(),
+              onPressed: () => controller.triggerRecenter(),
+              child: Icon(
+                Icons.my_location,
+                color: accentColor,
+              ),
+            ),
+          ),
+
           // 4. Controls Layout at Bottom
           Positioned(
             bottom: 0,

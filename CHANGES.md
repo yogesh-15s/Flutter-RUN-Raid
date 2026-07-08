@@ -43,6 +43,13 @@ This file tracks all updates and modifications made to the project.
 
 ### Change-6: Resolved Deprecated Color APIs
 - Date: 2026-07-08
+- Description: Replaced deprecated `withOpacity(...)` calls with `withValues(alpha: ...)` across the project files.
+
 ### Change-7: Excluded Dart Tool from C/C++ Indexer
 - Date: 2026-07-08
 - Description: Created workspace settings [.vscode/settings.json](file:///C:/NEW%20RUN%20RAID/.vscode/settings.json) to exclude `.dart_tool/` files from being parsed as C++ syntax by VS Code IntelliSense.
+
+### Change-8: Added Location Refresh Feature
+- Date: 2026-07-08
+- Description: Added a floating Location Refresh button (`Icons.my_location`) to [run_screen.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/run_screen.dart) and connected a reactive recenter trigger to [map_widget.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/map_widget.dart) which queries the GPS location via [location_service.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/data/location_service.dart) and repositions the map camera.
+
