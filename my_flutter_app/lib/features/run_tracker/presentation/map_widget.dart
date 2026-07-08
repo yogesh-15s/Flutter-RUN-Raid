@@ -48,10 +48,16 @@ class _MapWidgetState extends State<MapWidget> {
         .map((p) => LatLng(p.latitude, p.longitude))
         .toList();
 
-    // Map style provider (OpenStreetMap for normal, CartoDB Dark Matter for Raid mode)
-    final String urlTemplate = mode == 'RAID'
-        ? 'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'
-        : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+    // Map style provider: CartoDB Voyager (Streets), Esri World Imagery (Satellite), CartoDB Dark Matter (Dark)
+    final String urlTemplate;
+    if (controller.mapStyle == 'SATELLITE') {
+      urlTemplate = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+    } else if (controller.mapStyle == 'DARK') {
+      urlTemplate = 'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png';
+    } else {
+      // CartoDB Voyager is a highly readable, clear, modern street style
+      urlTemplate = 'https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png';
+    }
 
     // Auto-center map on new coordinates
     if (routeCoordinates.isNotEmpty) {

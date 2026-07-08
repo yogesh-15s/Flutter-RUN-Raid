@@ -20,8 +20,10 @@ class RunStateController extends ChangeNotifier {
   double _currentSpeed = 0.0;
   Timer? _runTimer;
   int _recenterTrigger = 0;
+  String _mapStyle = 'STREETS'; // 'STREETS', 'SATELLITE', 'DARK'
 
   // Getters
+  String get mapStyle => _mapStyle;
   int get recenterTrigger => _recenterTrigger;
   bool get isTracking => _isTracking;
   String get activeMode => _activeMode;
@@ -66,6 +68,19 @@ class RunStateController extends ChangeNotifier {
   void toggleMode() {
     if (_isTracking) return; // Prevent switching mid-run
     _activeMode = _activeMode == 'NORMAL' ? 'RAID' : 'NORMAL';
+    _mapStyle = _activeMode == 'RAID' ? 'DARK' : 'STREETS';
+    notifyListeners();
+  }
+
+  // Toggle Map style (STREETS -> SATELLITE -> DARK)
+  void toggleMapStyle() {
+    if (_mapStyle == 'STREETS') {
+      _mapStyle = 'SATELLITE';
+    } else if (_mapStyle == 'SATELLITE') {
+      _mapStyle = 'DARK';
+    } else {
+      _mapStyle = 'STREETS';
+    }
     notifyListeners();
   }
 

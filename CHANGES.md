@@ -53,3 +53,11 @@ This file tracks all updates and modifications made to the project.
 - Date: 2026-07-08
 - Description: Added a floating Location Refresh button (`Icons.my_location`) to [run_screen.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/run_screen.dart) and connected a reactive recenter trigger to [map_widget.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/map_widget.dart) which queries the GPS location via [location_service.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/data/location_service.dart) and repositions the map camera.
 
+### Change-9: Map Style Layer Selector
+- Date: 2026-07-08
+- Description: Added a map layers selector button (`Icons.layers`) supporting three high-fidelity tile options:
+  - **Streets (CartoDB Voyager)**: Modern, clear street names and vector styling.
+  - **Satellite (Esri World Imagery)**: Direct real-world satellite views.
+  - **Dark (CartoDB Dark Matter)**: Deep-contrast gaming/Raid Mode dark theme.
+
+

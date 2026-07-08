@@ -164,6 +164,31 @@ class RunScreen extends StatelessWidget {
             ),
           ),
 
+          // Map Style Toggler Button (glowing mini layers button)
+          Positioned(
+            bottom: controller.isTracking ? 148 : 206,
+            right: 16,
+            child: FloatingActionButton(
+              mini: true,
+              backgroundColor: isRaid ? const Color(0xFF1E1E1E) : Colors.white,
+              foregroundColor: accentColor,
+              shape: const CircleBorder(),
+              onPressed: () {
+                controller.toggleMapStyle();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Map style: ${controller.mapStyle}'),
+                    duration: const Duration(milliseconds: 800),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.layers,
+                color: accentColor,
+              ),
+            ),
+          ),
+
           // 4. Controls Layout at Bottom
           Positioned(
             bottom: 0,
