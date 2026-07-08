@@ -43,5 +43,6 @@ This file tracks all updates and modifications made to the project.
 
 ### Change-6: Resolved Deprecated Color APIs
 - Date: 2026-07-08
-- Description: Replaced all deprecated `withOpacity(...)` calls with `withValues(alpha: ...)` across [app_theme.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/core/theme/app_theme.dart), [map_widget.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/map_widget.dart), and [run_screen.dart](file:///C:/NEW%20RUN%20RAID/my_flutter_app/lib/features/run_tracker/presentation/run_screen.dart).
-
+### Change-7: Excluded Dart Tool from C/C++ Indexer
+- Date: 2026-07-08
+- Description: Created workspace settings [.vscode/settings.json](file:///C:/NEW%20RUN%20RAID/.vscode/settings.json) to exclude `.dart_tool/` files from being parsed as C++ syntax by VS Code IntelliSense.
